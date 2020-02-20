@@ -8,6 +8,7 @@
 
 #import "HomeVC.h"
 #import "ListVC.h"
+#import "Y_Storage.h"
 
 @interface HomeVC ()
 
@@ -39,10 +40,11 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = Y_RandomColor;
     Y_Button * testBtn = [Y_Button buttonWithFrame:CGRectMake(0, 0, 50, 50) callBack:^(Y_Button *sender) {
-        ListVC * testVC = [[ListVC alloc] init];
-        testVC.title = @"testVC";
-        testVC.view.backgroundColor = Y_RandomColor;
-        [self.navigationController pushViewController:testVC animated:YES];
+//        ListVC * testVC = [[ListVC alloc] init];
+//        testVC.title = @"testVC";
+//        testVC.view.backgroundColor = Y_RandomColor;
+//        [self.navigationController pushViewController:testVC animated:YES];
+//        [Y_Storage getPathWithPrefix:@"test"];
     }];
     testBtn.backgroundColor = Y_RandomColor;
     [self.view addSubview:testBtn];
