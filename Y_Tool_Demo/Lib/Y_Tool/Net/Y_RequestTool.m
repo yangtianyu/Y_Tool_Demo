@@ -1,15 +1,5 @@
-//
-//  Y_RequestTool.m
-//  SGCSDK_iOS_Demo
-//
-//  Created by 杨天宇 on 2017/6/8.
-//  Copyright © 2017年 杨天宇. All rights reserved.
-//
-
 #import "Y_RequestTool.h"
 #import "Y_Encrypt.h"
-//#import "SGCModel.h"
-//#import "SGCHUD.h"
 #define XXT_KEY @"PO63lIHeVIc6"
 
 @implementation Y_RequestTool

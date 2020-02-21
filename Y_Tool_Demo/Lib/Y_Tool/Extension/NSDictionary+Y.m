@@ -2,12 +2,12 @@
 
 @implementation NSDictionary (Y)
 
-+ (NSDictionary *)Y_dictionaryWithJSONString:(NSString *)json {
++ (NSDictionary *)Y_dictionaryWithJSONString:(NSString *)json{
     NSData *data = [json dataUsingEncoding:NSUTF8StringEncoding];
     return [self Y_dictionaryWithJSONData:data];
 }
 
-+ (NSDictionary *)Y_dictionaryWithJSONData:(NSData *)json {
++ (NSDictionary *)Y_dictionaryWithJSONData:(NSData *)json{
     NSDictionary *rst = nil;
     NSError *err = nil;
     if (json == nil || ![json isKindOfClass:[NSData class]]) {
@@ -20,7 +20,7 @@
     return rst;
 }
 
-- (NSString *)Y_getJsonString {
+- (NSString *)Y_getJsonString{
     NSString *rst = nil;
     NSError *err = nil;
     NSData *data = [NSJSONSerialization dataWithJSONObject:self options:0 error:&err];
@@ -30,11 +30,11 @@
     return rst;
 }
 
-- (NSString *)Y_stringForKey:(NSString *)key {
+- (NSString *)Y_stringForKey:(NSString *)key{
     return [self Y_stringForKey:key def:@""];
 }
 
-- (NSString *)Y_stringForKey:(NSString *)key def:(NSString *)def {
+- (NSString *)Y_stringForKey:(NSString *)key def:(NSString *)def{
     id rst = [self objectForKey:key];
     if ([rst isKindOfClass:[NSNumber class]]){
         rst = [rst stringValue];
@@ -58,7 +58,7 @@
     return [self Y_intForKey:key defaultValue:0];
 }
 
-- (int)Y_intForKey:(id)key defaultValue:(int)def {
+- (int)Y_intForKey:(id)key defaultValue:(int)def{
     int rst = def;
     id val = [self objectForKey:key];
     if (val){
@@ -67,11 +67,11 @@
     return rst;
 }
 
-- (double)Y_doubleForKey:(id)key {
+- (double)Y_doubleForKey:(id)key{
     return [self Y_doubleForKey:key defaultValue:0.0];
 }
 
-- (double)Y_doubleForKey:(id)key defaultValue:(double)def {
+- (double)Y_doubleForKey:(id)key defaultValue:(double)def{
     double rst = def;
     id val = [self objectForKey:key];
     if (val){
@@ -80,11 +80,11 @@
     return rst;
 }
 
-- (BOOL)Y_boolForKey:(id)key {
+- (BOOL)Y_boolForKey:(id)key{
     return [self Y_boolForKey:key defaultValue:FALSE];
 }
 
-- (BOOL)Y_boolForKey:(id)key defaultValue:(BOOL)def {
+- (BOOL)Y_boolForKey:(id)key defaultValue:(BOOL)def{
     BOOL rst = def;
     id val = [self objectForKey:key];
     if (val){
@@ -99,7 +99,7 @@
     return rst;
 }
 
-- (NSDictionary *)Y_dictForKey:(id)key {
+- (NSDictionary *)Y_dictForKey:(id)key{
     NSDictionary *rst = nil;
     if ([self.allKeys containsObject:key]){
         id val = [self objectForKey:key];
@@ -110,7 +110,7 @@
     return rst;
 }
 
-- (NSArray *)Y_arrayForKey:(id)key {
+- (NSArray *)Y_arrayForKey:(id)key{
     NSArray *rst = nil;
     if ([self.allKeys containsObject:key]){
         id val = [self objectForKey:key];
@@ -121,7 +121,7 @@
     return rst;
 }
 
-- (NSArray *)Y_arrayForKeyEx:(id)key {
+- (NSArray *)Y_arrayForKeyEx:(id)key{
     NSArray *rst = nil;
     id val = [self objectForKey:key];
     if (val){
@@ -135,24 +135,8 @@
     return rst;
 }
 
-- (NSDictionary *)objectFromJSONString {
+- (NSDictionary *)objectFromJSONString{
     return self;
 }
 
-@end
-
-@implementation NSMutableDictionary (Y)
-- (void)Y_setCoderObject:(id<NSCoding>)obj forKey:(id)key {
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:obj];
-    [self setValue:data forKey:key];
-}
-
-- (id)Y_coderObjectForKey:(id)key {
-    id rst = nil;
-    NSData *data = [self valueForKey:key];
-    if (data.length > 0){
-        rst = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    }
-    return rst;
-}
 @end

@@ -9,6 +9,7 @@
 #import "HomeVC.h"
 #import "ListVC.h"
 #import "Y_Storage.h"
+#import "MBProgressHUD.h"
 
 @interface HomeVC ()
 
@@ -44,7 +45,6 @@
 //        testVC.title = @"testVC";
 //        testVC.view.backgroundColor = Y_RandomColor;
 //        [self.navigationController pushViewController:testVC animated:YES];
-//        [Y_Storage getPathWithPrefix:@"test"];
     }];
     testBtn.backgroundColor = Y_RandomColor;
     [self.view addSubview:testBtn];

@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDictionary (Y)
+
 + (NSDictionary *)Y_dictionaryWithJSONString:(NSString *)json;
 + (NSDictionary *)Y_dictionaryWithJSONData:(NSData *)json;
 - (NSString *)Y_getJsonString;
@@ -24,12 +25,5 @@
 - (NSArray *)Y_arrayForKeyEx:(id)key;
 
 - (NSDictionary *)objectFromJSONString;
-
-@end
-
-@interface NSMutableDictionary (Y)
-
-- (void)Y_setCoderObject:(id<NSCoding>)obj forKey:(id)key;
-- (id)Y_coderObjectForKey:(id)key;
 
 @end

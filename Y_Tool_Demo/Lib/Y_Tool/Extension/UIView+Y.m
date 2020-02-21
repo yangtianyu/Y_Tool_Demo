@@ -3,134 +3,144 @@
 
 @implementation UIView (UIView)
 
-@dynamic x;
-@dynamic y;
-@dynamic width;
-@dynamic height;
-@dynamic origin;
-@dynamic size;
-
 #pragma mark ---------------- Setters-----------------
--(void)setX:(CGFloat)x{
+- (void)setX_Y:(CGFloat)x_Y{
     CGRect r        = self.frame;
-    r.origin.x      = x;
+    r.origin.x      = x_Y;
     self.frame      = r;
 }
 
--(void)setY:(CGFloat)y{
+- (void)setY_Y:(CGFloat)y_Y{
     CGRect r        = self.frame;
-    r.origin.y      = y;
+    r.origin.y      = y_Y;
     self.frame      = r;
 }
 
--(void)setWidth:(CGFloat)width{
+- (void)setWidth_Y:(CGFloat)width_Y{
     CGRect r        = self.frame;
-    r.size.width    = width;
+    r.size.width    = width_Y;
     self.frame      = r;
 }
 
--(void)setHeight:(CGFloat)height{
+- (void)setHeight_Y:(CGFloat)height_Y{
     CGRect r        = self.frame;
-    r.size.height   = height;
+    r.size.height   = height_Y;
     self.frame      = r;
 }
 
--(void)setOrigin:(CGPoint)origin{
-    self.x          = origin.x;
-    self.y          = origin.y;
+- (void)setOrigin_Y:(CGPoint)origin_Y{
+    CGRect r        = self.frame;
+    r.origin        = origin_Y;
+    self.frame      = r;
 }
 
--(void)setSize:(CGSize)size{
-    self.width      = size.width;
-    self.height     = size.height;
+- (void)setSize_Y:(CGSize)size_Y{
+    CGRect r        = self.frame;
+    r.size          = size_Y;
+    self.frame      = r;
 }
 
--(void)setRight:(CGFloat)right {
-    CGRect frame = self.frame;
-    frame.origin.x = right - frame.size.width;
-    self.frame = frame;
+- (void)setTop_Y:(CGFloat)top_Y{
+    CGRect r = self.frame;
+    r.origin.y = top_Y;
+    self.frame = r;
 }
 
--(void)setBottom:(CGFloat)bottom {
-    CGRect frame = self.frame;
-    frame.origin.y = bottom - frame.size.height;
-    self.frame = frame;
+- (void)setLeft_Y:(CGFloat)left_Y{
+    CGRect r = self.frame;
+    r.origin.x = left_Y;
+    self.frame = r;
 }
 
--(void)setCenterX:(CGFloat)centerX {
-    self.center = CGPointMake(centerX, self.center.y);
+- (void)setBottom_Y:(CGFloat)bottom_Y{
+    CGRect r = self.frame;
+    r.origin.y = bottom_Y - r.size.height;
+    self.frame = r;
 }
 
--(void)setCenterY:(CGFloat)centerY {
-    self.center = CGPointMake(self.center.x, centerY);
+- (void)setRight_Y:(CGFloat)right_Y{
+    CGRect r = self.frame;
+    r.origin.x = right_Y - r.size.width;
+    self.frame = r;
+}
+
+- (void)setCenter_Y:(CGPoint)center_Y{
+    self.center = center_Y;
+}
+
+- (void)setCenterX_Y:(CGFloat)centerX_Y{
+    self.center = CGPointMake(centerX_Y, self.center.y);
+}
+
+- (void)setCenterY_Y:(CGFloat)centerY_Y{
+    self.center = CGPointMake(self.center.x, centerY_Y);
 }
 
 #pragma mark ---------------- Getters-----------------
--(CGFloat)x{
+- (CGFloat)x_Y{
     return self.frame.origin.x;
 }
 
--(CGFloat)y{
+- (CGFloat)y_Y{
     return self.frame.origin.y;
 }
 
--(CGFloat)width{
+- (CGFloat)width_Y{
     return self.frame.size.width;
 }
 
--(CGFloat)height{
+- (CGFloat)height_Y{
     return self.frame.size.height;
 }
 
--(CGPoint)origin{
-    return CGPointMake(self.x, self.y);
+- (CGPoint)origin_Y{
+    return self.frame.origin;
 }
 
--(CGSize)size{
-    return CGSizeMake(self.width, self.height);
+- (CGSize)size_Y{
+    return self.frame.size;
 }
 
--(CGFloat)right {
-    return self.frame.origin.x + self.frame.size.width;
+- (CGFloat)top_Y{
+    return self.frame.origin.y;
 }
 
--(CGFloat)bottom {
+- (CGFloat)left_Y{
+    return self.frame.origin.x;
+}
+
+- (CGFloat)bottom_Y{
     return self.frame.origin.y + self.frame.size.height;
 }
 
--(CGFloat)centerX {
+- (CGFloat)right_Y{
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+- (CGPoint)center_Y{
+    return self.center;
+}
+
+- (CGFloat)centerX_Y{
     return self.center.x;
 }
 
--(CGFloat)centerY {
+- (CGFloat)centerY_Y{
     return self.center.y;
 }
 
--(UIView *)Y_lastSubviewOnX{
-    if(self.subviews.count > 0){
-        UIView *outView = self.subviews[0];
-        
-        for(UIView *v in self.subviews)
-            if(v.x > outView.x)
-                outView = v;
-        
-        return outView;
+#pragma mark -
+#pragma mark ============== Function ==============
+/// 移除子视图
+- (void)Y_removeAllSubviews{
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
     }
-    return nil;
+}
+- (void)Y_removeFromSuperView{
+    [self removeFromSuperview];
 }
 
--(UIView *)Y_lastSubviewOnY{
-    if(self.subviews.count > 0){
-        UIView *outView = self.subviews[0];
-        
-        for(UIView *v in self.subviews)
-            if(v.y > outView.y)
-                outView = v;
-        
-        return outView;
-    }
-    return nil;
-}
 - (UIViewController *)Y_getCurrentViewController{
     UIResponder *next = [self nextResponder];
     do {
@@ -141,19 +151,11 @@
     } while (next != nil);
     return nil;
 }
-- (void)Y_removeAllSubviews {
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
-    }
-    return;
-}
-/**
- 展示一个textView到window顶部
- */
+
 + (void)Y_showTestTextView:(NSString *)textStr{
     UITextView * textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 64, Y_ScreenWidth, 400)];
     textView.backgroundColor = Y_RedColor;
     textView.text = textStr;
-    [[UIApplication sharedApplication].keyWindow addSubview:textView];
+    [Y_KeyWindow addSubview:textView];
 }
 @end

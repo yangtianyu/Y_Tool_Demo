@@ -11,11 +11,11 @@
 #define Y_ScreenWidth   [UIScreen mainScreen].bounds.size.width
 #define Y_ScreenHeight  [UIScreen mainScreen].bounds.size.height
 #define Y_ScreenCenter  CGPointMake(Y_ScreenWidth * 0.5, Y_ScreenHeight * 0.5)
-#define Y_KeyWindow     [[UIApplication sharedApplication] keyWindow]
+#define Y_KeyWindow     [[[UIApplication sharedApplication] windows] lastObject]
 
 //颜色相关
 #define Y_ColorFormRGB(rgbValue)    [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-#define Y_ColorFormGBA(rgbValue, a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
+#define Y_ColorFormRGBA(rgbValue, a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 #define Y_ColorFormR_G_B(r,g,b)     [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1]
 #define Y_ColorFormR_G_B_A(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 #define Y_RandomColor               Y_ColorFormR_G_B(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
@@ -40,18 +40,16 @@
 #pragma mark -
 #pragma mark ============== 常用功能性宏 ==============
 //数字取半
-#define HALF(value)             (value * 0.5)
+#define Y_HALF(value)             (value * 0.5)
 //数字乘二
-#define DOUBLE(value)           (value * 2)
+#define Y_DOUBLE(value)           (value * 2)
 //随机数
-#define RANDOM_INT(from,to)     ((int)(from + (arc4random() % (to - from + 1))))
-//#define RANDOM_FLOTE(from,to)   (int)(from + (arc4random() % (to – from + 1)));
+#define Y_RANDOM_INT(from,to)     ((int)(from + (arc4random() % (to - from + 1))))
 
 #pragma mark -
 #pragma mark ============== 显示功能性宏 ==============
 //分割线高度(系统默认高度)
-#define separateLineH           0.25
-
+#define Y_SeparateLineH           0.25
 
 
 #endif

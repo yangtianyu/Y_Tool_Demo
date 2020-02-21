@@ -1,5 +1,6 @@
 #import "Y_Storage.h"
 #import "SAMKeychain.h"
+
 @implementation Y_Storage
 //plist文件主要用于不经常修改、数据量小的数据
 //偏好设置主要用于检查版本是否更新、是否启动引导页、自动登录、版本号等程序设置归
@@ -25,7 +26,7 @@
 #pragma mark -
 #pragma mark ============== plist ==============
 /// 从plist获取数据
-+ (NSDictionary *)getContentFromPlistName:(NSString * __nonnull)name{
++ (NSDictionary *)getContentFromPlistName:(NSString *)name {
     NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     return dict;
@@ -111,6 +112,7 @@
         return NO;
     }
 }
+
 #pragma mark -
 #pragma mark ============== keyChain ==============
 /// 向keyChain中保存内容

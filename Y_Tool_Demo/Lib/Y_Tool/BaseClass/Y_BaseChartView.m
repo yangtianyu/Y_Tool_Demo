@@ -6,6 +6,13 @@
 @end
 
 @implementation Y_BaseChartView
+
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self drawRect:context lineWidth:0 lineColor:nil fillColor:self.backgroundColor radius:0 rect:self.bounds];
+}
+
 /**
  获得一个绘图部分常用的动画对象
  */
@@ -26,11 +33,6 @@
     return animation;
 }
 
-- (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self drawRect:context lineWidth:0 lineColor:nil fillColor:self.backgroundColor radius:0 rect:self.bounds];
-}
 /**
  绘制一条实线
  */

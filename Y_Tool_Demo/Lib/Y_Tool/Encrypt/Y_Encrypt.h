@@ -2,6 +2,7 @@
 #import "Y_XXTEA.h"
 
 @interface Y_Encrypt : NSObject
+
 /// MD5加密
 + (NSString *)MD5:(NSString *)string;
 
@@ -13,4 +14,5 @@
 
 /// XXTEA解密
 + (NSString *)XXTEA_decryptBase64StringToString:(NSString *)data stringKey:(NSString *)key;
+
 @end
