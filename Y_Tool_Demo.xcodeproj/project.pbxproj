@@ -15,11 +15,14 @@
 		FBA8CBA523B5B5C000376C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA8CBA223B5B5C000376C26 /* Assets.xcassets */; };
 		FBC6A42523FE710000E4FC7E /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC6A42123FE710000E4FC7E /* SAMKeychainQuery.m */; };
 		FBC6A42623FE710000E4FC7E /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC6A42423FE710000E4FC7E /* SAMKeychain.m */; };
+		FBC6A44B23FF8AC600E4FC7E /* NSDictionary+Y.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC6A44323FF8AC600E4FC7E /* NSDictionary+Y.m */; };
+		FBC6A44C23FF8AC600E4FC7E /* NSNumber+Y.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC6A44623FF8AC600E4FC7E /* NSNumber+Y.m */; };
+		FBC6A44D23FF8AC600E4FC7E /* NSString+Y.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC6A44723FF8AC600E4FC7E /* NSString+Y.m */; };
+		FBC6A44E23FF8AC600E4FC7E /* UIView+Y.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC6A44823FF8AC600E4FC7E /* UIView+Y.m */; };
 		FBEE5A3E23B5AE1400FE8998 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEE5A1423B5AE1400FE8998 /* SceneDelegate.m */; };
 		FBEE5A3F23B5AE1400FE8998 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEE5A1523B5AE1400FE8998 /* main.m */; };
 		FBEE5A4023B5AE1400FE8998 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEE5A1623B5AE1400FE8998 /* AppDelegate.m */; };
 		FBEE5A4223B5AE1400FE8998 /* Y_RequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEE5A1F23B5AE1400FE8998 /* Y_RequestTool.m */; };
-		FBEE5A4323B5AE1400FE8998 /* UIView+Y.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEE5A2123B5AE1400FE8998 /* UIView+Y.m */; };
 		FBEE5A4423B5AE1400FE8998 /* Y_AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEE5A2623B5AE1400FE8998 /* Y_AppConfig.m */; };
 		FBEE5A4523B5AE1400FE8998 /* Y_Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEE5A2923B5AE1400FE8998 /* Y_Storage.m */; };
 		FBEE5A4623B5AE1400FE8998 /* Y_BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEE5A2E23B5AE1400FE8998 /* Y_BaseNavigationViewController.m */; };
@@ -47,6 +50,14 @@
 		FBC6A42223FE710000E4FC7E /* SAMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychain.h; sourceTree = "<group>"; };
 		FBC6A42323FE710000E4FC7E /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
 		FBC6A42423FE710000E4FC7E /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
+		FBC6A44323FF8AC600E4FC7E /* NSDictionary+Y.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Y.m"; sourceTree = "<group>"; };
+		FBC6A44423FF8AC600E4FC7E /* UIView+Y.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Y.h"; sourceTree = "<group>"; };
+		FBC6A44523FF8AC600E4FC7E /* NSString+Y.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Y.h"; sourceTree = "<group>"; };
+		FBC6A44623FF8AC600E4FC7E /* NSNumber+Y.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Y.m"; sourceTree = "<group>"; };
+		FBC6A44723FF8AC600E4FC7E /* NSString+Y.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Y.m"; sourceTree = "<group>"; };
+		FBC6A44823FF8AC600E4FC7E /* UIView+Y.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Y.m"; sourceTree = "<group>"; };
+		FBC6A44923FF8AC600E4FC7E /* NSNumber+Y.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Y.h"; sourceTree = "<group>"; };
+		FBC6A44A23FF8AC600E4FC7E /* NSDictionary+Y.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Y.h"; sourceTree = "<group>"; };
 		FBEE59C523B3392600FE8998 /* Y_Tool_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Y_Tool_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBEE5A1223B5AE1400FE8998 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBEE5A1423B5AE1400FE8998 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
@@ -55,8 +66,6 @@
 		FBEE5A1823B5AE1400FE8998 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		FBEE5A1E23B5AE1400FE8998 /* Y_RequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_RequestTool.h; sourceTree = "<group>"; };
 		FBEE5A1F23B5AE1400FE8998 /* Y_RequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_RequestTool.m; sourceTree = "<group>"; };
-		FBEE5A2123B5AE1400FE8998 /* UIView+Y.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Y.m"; sourceTree = "<group>"; };
-		FBEE5A2223B5AE1400FE8998 /* UIView+Y.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Y.h"; sourceTree = "<group>"; };
 		FBEE5A2423B5AE1400FE8998 /* Y_AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_AppConfig.h; sourceTree = "<group>"; };
 		FBEE5A2523B5AE1400FE8998 /* Y_Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_Define.h; sourceTree = "<group>"; };
 		FBEE5A2623B5AE1400FE8998 /* Y_AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_AppConfig.m; sourceTree = "<group>"; };
@@ -219,8 +228,14 @@
 		FBEE5A2023B5AE1400FE8998 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FBEE5A2223B5AE1400FE8998 /* UIView+Y.h */,
-				FBEE5A2123B5AE1400FE8998 /* UIView+Y.m */,
+				FBC6A44A23FF8AC600E4FC7E /* NSDictionary+Y.h */,
+				FBC6A44323FF8AC600E4FC7E /* NSDictionary+Y.m */,
+				FBC6A44923FF8AC600E4FC7E /* NSNumber+Y.h */,
+				FBC6A44623FF8AC600E4FC7E /* NSNumber+Y.m */,
+				FBC6A44523FF8AC600E4FC7E /* NSString+Y.h */,
+				FBC6A44723FF8AC600E4FC7E /* NSString+Y.m */,
+				FBC6A44423FF8AC600E4FC7E /* UIView+Y.h */,
+				FBC6A44823FF8AC600E4FC7E /* UIView+Y.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -352,22 +367,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBEE5A4823B5AE1400FE8998 /* Y_BaseModel.m in Sources */,
+				FBC6A44D23FF8AC600E4FC7E /* NSString+Y.m in Sources */,
 				FBEE5A3F23B5AE1400FE8998 /* main.m in Sources */,
 				FBEE5A4423B5AE1400FE8998 /* Y_AppConfig.m in Sources */,
 				FBC6A42623FE710000E4FC7E /* SAMKeychain.m in Sources */,
 				FBEE5A4A23B5AE1400FE8998 /* Y_Encrypt.m in Sources */,
+				FBC6A44E23FF8AC600E4FC7E /* UIView+Y.m in Sources */,
 				FBEE5A4623B5AE1400FE8998 /* Y_BaseNavigationViewController.m in Sources */,
 				FB495F5123B5FEC6007C22F7 /* HomeVC.m in Sources */,
 				FBEE5A4723B5AE1400FE8998 /* Y_Button.m in Sources */,
 				FBEE5A4B23B5AE1400FE8998 /* Y_XXTEA.m in Sources */,
 				FB495F4B23B5FBD8007C22F7 /* MainTabBarC.m in Sources */,
 				FB495F5423B5FED4007C22F7 /* ListVC.m in Sources */,
-				FBEE5A4323B5AE1400FE8998 /* UIView+Y.m in Sources */,
 				FBEE5A4223B5AE1400FE8998 /* Y_RequestTool.m in Sources */,
 				FBEE5A4523B5AE1400FE8998 /* Y_Storage.m in Sources */,
+				FBC6A44C23FF8AC600E4FC7E /* NSNumber+Y.m in Sources */,
 				FBEE5A3E23B5AE1400FE8998 /* SceneDelegate.m in Sources */,
 				FBC6A42523FE710000E4FC7E /* SAMKeychainQuery.m in Sources */,
 				FBEE5A4023B5AE1400FE8998 /* AppDelegate.m in Sources */,
+				FBC6A44B23FF8AC600E4FC7E /* NSDictionary+Y.m in Sources */,
 				FBEE5A4923B5AE1400FE8998 /* Y_BaseChartView.m in Sources */,
 				FB495F4A23B5FBD8007C22F7 /* RootTabBarC.m in Sources */,
 			);

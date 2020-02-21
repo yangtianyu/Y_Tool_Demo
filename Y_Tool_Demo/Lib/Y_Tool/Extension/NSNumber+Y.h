@@ -1,8 +1,5 @@
 #import <Foundation/Foundation.h>
 
-
-
-@interface Y_Storage : NSObject
+@interface NSNumber (Y)
 
 @end
-
