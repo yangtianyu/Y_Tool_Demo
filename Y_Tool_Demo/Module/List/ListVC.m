@@ -7,9 +7,14 @@
 //
 
 #import "ListVC.h"
+#import "ListVCModel.h"
+#import "ChartVC.h"
 
-@interface ListVC ()
 
+@interface ListVC ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray *dataArr;
 @end
 
 @implementation ListVC
@@ -28,7 +33,6 @@
     [super viewDidDisappear:animated];
 }
 - (void)dealloc{
-    NSLog(@"13");
 }
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -36,30 +40,96 @@
     [self initData];
 }
 - (void)initView{
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = Y_RandomColor;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.view.backgroundColor = Y_RandomColor;
-    __weak typeof(self) weakself = self;
-    Y_Button * testBtn = [Y_Button buttonWithFrame:CGRectMake(0, 0, 50, 50) callBack:^(Y_Button *sender) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
-    testBtn.backgroundColor = Y_RandomColor;
-    [self.view addSubview:testBtn];
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"UITableViewCell"];
+    [self.view addSubview:self.tableView];
 }
 - (void)initData{
+    NSArray * arr = @[
+        @{
+            @"title":@"Chart",
+            @"url":@"Chart",
+        },
+        @{
+            @"title":@"Custom",
+            @"url":@"Custom",
+        },
+    ];
+    NSMutableArray * arrM = @[].mutableCopy;
+    for (NSDictionary * dict in arr) {
+        ListVCModel * model = [[ListVCModel alloc] initWithDict:dict];
+        [arrM addObject:model];
+    }
+    self.dataArr = arrM.copy;
+    [self.tableView reloadData];
 }
 #pragma mark -
 #pragma mark ============== UpdateUI ==============
 
 #pragma mark -
 #pragma mark ============== Event ==============
-
+- (void)chartVCbackBarButtonItemAction:(UIBarButtonItem *)sender{
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
 #pragma mark -
 #pragma mark ============== InterTool ==============
 
 #pragma mark -
 #pragma mark ============== API ==============
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 3;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(section == 0){
+        return self.dataArr.count;
+    }
+    return 10;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == 0){
+        return 60;
+    }
+    return 100;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UITableViewHeaderFooterView * view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"UITableViewHeaderFooterView"];
+    if(!view){
+        view = [[UITableViewHeaderFooterView alloc]initWithReuseIdentifier:@"UITableViewHeaderFooterView"];
+    }
+    view.textLabel.text = [NSString stringWithFormat:@"%ld",section];
+    return view;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell * cell = nil;
+    if(indexPath.section == 0){
+        ListVCModel * model = self.dataArr[indexPath.row];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@",model.title];
+    }
+    if(!cell){
+        cell = [[UITableViewCell alloc] init];
+    }
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if(indexPath.section == 0){
+        ListVCModel * model = self.dataArr[indexPath.row];
+        ChartVC * chartVC = [[ChartVC alloc] init];
+        chartVC.title = @"tempVC";
+        chartVC.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(chartVCbackBarButtonItemAction:)];
+        chartVC.navigationItem.leftBarButtonItems = @[
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(chartVCbackBarButtonItemAction:)],
+        ];
+        Y_BaseNavigationViewController * navVC = [[Y_BaseNavigationViewController alloc] initWithRootViewController:chartVC];
+        navVC.modalPresentationStyle = UIModalPresentationFullScreen; 
+        [self presentViewController:navVC animated:YES completion:nil];
+    }
+}
 #pragma mark -
 #pragma mark ============== Request ==============
 
@@ -68,5 +138,6 @@
 
 #pragma mark -
 #pragma mark ============== Getting&Setting ==============
-
 @end
+
+

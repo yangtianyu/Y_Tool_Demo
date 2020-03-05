@@ -1,20 +1,10 @@
-//
-//  HomeVC.m
-//  Y_Tool_Demo
-//
-//  Created by ty.yang on 2019/12/27.
-//  Copyright © 2019 ty.yang. All rights reserved.
-//
-
-#import "HomeVC.h"
-#import "ListVC.h"
-#import "Y_Storage.h"
-#import "MBProgressHUD.h"
-
-@interface HomeVC ()
+#import "ChartVC.h"
+#import "ChartView.h"
+@interface ChartVC ()
+@property (nonatomic, strong) ChartView * chartView;
 @end
 
-@implementation HomeVC
+@implementation ChartVC
 #pragma mark -
 #pragma mark ============== VCLifecycle ==============
 - (void)viewWillAppear:(BOOL)animated{
@@ -38,14 +28,21 @@
 }
 - (void)initView{
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.view.backgroundColor = Y_RandomColor;
-    Y_Button * testBtn = [Y_Button buttonWithFrame:CGRectMake(0, 0, 50, 50) callBack:^(Y_Button *sender) {
-        [Y_HUD showTitle:@"网络错误" desc:nil CB:^{
-        }];
+    self.title = self.title?:@"ChartVC";
+    self.chartView = [[ChartView alloc] initWithFrame:self.view.bounds];
+    self.chartView.backgroundColor = Y_WhiteColor;
+    [self.view addSubview:self.chartView];
+    __weak typeof(self) weakself = self;
+    Y_Button * btn = [Y_Button buttonWithFrame:CGRectZero callBack:^(Y_Button *sender) {
+        [weakself.chartView setNeedsDisplay];
     }];
-    testBtn.backgroundColor = Y_RandomColor;
-    [self.view addSubview:testBtn];
-    
+    [btn setTitle:@"点击绘制" forState:0];
+    [btn setBackgroundColor:Y_BlackColor];
+    [btn sizeToFit];
+    [self.view addSubview:btn];
+//    self.navigationItem.leftBarButtonItems = @[
+//        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(backBarButtonItemAction:)],
+//    ];
 }
 - (void)initData{
 }
@@ -54,7 +51,8 @@
 
 #pragma mark -
 #pragma mark ============== Event ==============
-
+- (void)backBarButtonItemAction:(UIBarButtonItem *)sender{
+}
 #pragma mark -
 #pragma mark ============== InterTool ==============
 
@@ -71,3 +69,4 @@
 #pragma mark ============== Getting&Setting ==============
 
 @end
+

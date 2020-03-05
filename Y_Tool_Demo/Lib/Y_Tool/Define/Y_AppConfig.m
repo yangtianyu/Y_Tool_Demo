@@ -37,7 +37,7 @@
 }
 
 /// bundleIdentifier
-+(NSString*)bundleIdentifier{
++ (NSString*)bundleIdentifier{
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
 }
 

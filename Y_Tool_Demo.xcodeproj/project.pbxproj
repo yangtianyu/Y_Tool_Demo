@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB034EFE2410D81C00D5E745 /* ChartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB034EF92410D81C00D5E745 /* ChartVC.m */; };
+		FB034EFF2410D81C00D5E745 /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB034EFB2410D81C00D5E745 /* ChartView.m */; };
 		FB495F4A23B5FBD8007C22F7 /* RootTabBarC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB495F4823B5FBD8007C22F7 /* RootTabBarC.m */; };
 		FB495F4B23B5FBD8007C22F7 /* MainTabBarC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB495F4923B5FBD8007C22F7 /* MainTabBarC.m */; };
 		FB495F5123B5FEC6007C22F7 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB495F5023B5FEC6007C22F7 /* HomeVC.m */; };
 		FB495F5423B5FED4007C22F7 /* ListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB495F5323B5FED4007C22F7 /* ListVC.m */; };
+		FBA09CED240F9DFB005B78AD /* Y_UITool.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA09CEC240F9DFB005B78AD /* Y_UITool.m */; };
+		FBA09CF22410A928005B78AD /* ListVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA09CF12410A928005B78AD /* ListVCModel.m */; };
+		FBA09CF52410D2BF005B78AD /* Y_Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA09CF42410D2BF005B78AD /* Y_Alert.m */; };
 		FBA8CBA423B5B5C000376C26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBA8CBA123B5B5C000376C26 /* LaunchScreen.storyboard */; };
 		FBA8CBA523B5B5C000376C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBA8CBA223B5B5C000376C26 /* Assets.xcassets */; };
 		FBC6A42523FE710000E4FC7E /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC6A42123FE710000E4FC7E /* SAMKeychainQuery.m */; };
@@ -36,6 +41,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB034EF92410D81C00D5E745 /* ChartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartVC.m; sourceTree = "<group>"; };
+		FB034EFB2410D81C00D5E745 /* ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartView.m; sourceTree = "<group>"; };
+		FB034EFC2410D81C00D5E745 /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartView.h; sourceTree = "<group>"; };
+		FB034EFD2410D81C00D5E745 /* ChartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartVC.h; sourceTree = "<group>"; };
 		FB495F4623B5FBD8007C22F7 /* MainTabBarC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarC.h; sourceTree = "<group>"; };
 		FB495F4723B5FBD8007C22F7 /* RootTabBarC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarC.h; sourceTree = "<group>"; };
 		FB495F4823B5FBD8007C22F7 /* RootTabBarC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarC.m; sourceTree = "<group>"; };
@@ -45,6 +54,12 @@
 		FB495F5223B5FED4007C22F7 /* ListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListVC.h; sourceTree = "<group>"; };
 		FB495F5323B5FED4007C22F7 /* ListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListVC.m; sourceTree = "<group>"; };
 		FB495F5523B6028D007C22F7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FBA09CEB240F9DFB005B78AD /* Y_UITool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Y_UITool.h; sourceTree = "<group>"; };
+		FBA09CEC240F9DFB005B78AD /* Y_UITool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Y_UITool.m; sourceTree = "<group>"; };
+		FBA09CF02410A928005B78AD /* ListVCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListVCModel.h; sourceTree = "<group>"; };
+		FBA09CF12410A928005B78AD /* ListVCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListVCModel.m; sourceTree = "<group>"; };
+		FBA09CF32410D2BF005B78AD /* Y_Alert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Y_Alert.h; sourceTree = "<group>"; };
+		FBA09CF42410D2BF005B78AD /* Y_Alert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Y_Alert.m; sourceTree = "<group>"; };
 		FBA8CBA123B5B5C000376C26 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBA8CBA223B5B5C000376C26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBA8CBA323B5B5C000376C26 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,11 +118,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB034EF82410D81C00D5E745 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				FB034EFD2410D81C00D5E745 /* ChartVC.h */,
+				FB034EF92410D81C00D5E745 /* ChartVC.m */,
+				FB034EFA2410D81C00D5E745 /* View */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		FB034EFA2410D81C00D5E745 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB034EFC2410D81C00D5E745 /* ChartView.h */,
+				FB034EFB2410D81C00D5E745 /* ChartView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FB495F4C23B5FE9C007C22F7 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				FB034EF82410D81C00D5E745 /* Chart */,
 				FB495F4D23B5FE9C007C22F7 /* Home */,
 				FB495F4E23B5FE9C007C22F7 /* List */,
+				FBA09CEF2410A90B005B78AD /* Model */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -128,6 +164,15 @@
 				FB495F5323B5FED4007C22F7 /* ListVC.m */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		FBA09CEF2410A90B005B78AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBA09CF02410A928005B78AD /* ListVCModel.h */,
+				FBA09CF12410A928005B78AD /* ListVCModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FBA8CBA023B5B5C000376C26 /* Resources */ = {
@@ -172,8 +217,12 @@
 		FBC6A45423FFD61C00E4FC7E /* Toos */ = {
 			isa = PBXGroup;
 			children = (
+				FBA09CF32410D2BF005B78AD /* Y_Alert.h */,
+				FBA09CF42410D2BF005B78AD /* Y_Alert.m */,
 				FBC6A45523FFD63700E4FC7E /* Y_HUD.h */,
 				FBC6A45623FFD63700E4FC7E /* Y_HUD.m */,
+				FBA09CEB240F9DFB005B78AD /* Y_UITool.h */,
+				FBA09CEC240F9DFB005B78AD /* Y_UITool.m */,
 			);
 			path = Toos;
 			sourceTree = "<group>";
@@ -408,19 +457,24 @@
 				FBEE5A4423B5AE1400FE8998 /* Y_AppConfig.m in Sources */,
 				FBC6A42623FE710000E4FC7E /* SAMKeychain.m in Sources */,
 				FBEE5A4A23B5AE1400FE8998 /* Y_Encrypt.m in Sources */,
+				FBA09CF22410A928005B78AD /* ListVCModel.m in Sources */,
 				FBC6A44E23FF8AC600E4FC7E /* UIView+Y.m in Sources */,
 				FBEE5A4623B5AE1400FE8998 /* Y_BaseNavigationViewController.m in Sources */,
+				FB034EFE2410D81C00D5E745 /* ChartVC.m in Sources */,
 				FB495F5123B5FEC6007C22F7 /* HomeVC.m in Sources */,
 				FBEE5A4723B5AE1400FE8998 /* Y_Button.m in Sources */,
 				FBEE5A4B23B5AE1400FE8998 /* Y_XXTEA.m in Sources */,
 				FB495F4B23B5FBD8007C22F7 /* MainTabBarC.m in Sources */,
 				FB495F5423B5FED4007C22F7 /* ListVC.m in Sources */,
+				FBA09CED240F9DFB005B78AD /* Y_UITool.m in Sources */,
 				FBEE5A4223B5AE1400FE8998 /* Y_RequestTool.m in Sources */,
 				FBEE5A4523B5AE1400FE8998 /* Y_Storage.m in Sources */,
 				FBC6A44C23FF8AC600E4FC7E /* NSNumber+Y.m in Sources */,
+				FB034EFF2410D81C00D5E745 /* ChartView.m in Sources */,
 				FBEE5A3E23B5AE1400FE8998 /* SceneDelegate.m in Sources */,
 				FBC6A42523FE710000E4FC7E /* SAMKeychainQuery.m in Sources */,
 				FBEE5A4023B5AE1400FE8998 /* AppDelegate.m in Sources */,
+				FBA09CF52410D2BF005B78AD /* Y_Alert.m in Sources */,
 				FBC6A44B23FF8AC600E4FC7E /* NSDictionary+Y.m in Sources */,
 				FBEE5A4923B5AE1400FE8998 /* Y_BaseChartView.m in Sources */,
 				FB495F4A23B5FBD8007C22F7 /* RootTabBarC.m in Sources */,

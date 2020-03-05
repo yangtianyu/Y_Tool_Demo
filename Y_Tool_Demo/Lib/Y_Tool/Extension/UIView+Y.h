@@ -22,7 +22,10 @@
 
 /// 获得当前视图的控制器
 - (UIViewController *)Y_getCurrentViewController;
+
 /// 展示一个textView到window顶部
 + (void)Y_showTestTextView:(NSString *)textStr;
+
+- (void)Y_radius:(CGFloat)redius;
 
 @end

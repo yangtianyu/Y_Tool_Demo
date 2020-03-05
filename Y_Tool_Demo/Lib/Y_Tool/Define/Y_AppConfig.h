@@ -10,7 +10,7 @@
 /// shortVersion
 + (NSString*)shortVersion;
 /// bundleIdentifier
-+(NSString*)bundleIdentifier;
++ (NSString*)bundleIdentifier;
 /// displayName
 + (NSString*)displayName;
 @end

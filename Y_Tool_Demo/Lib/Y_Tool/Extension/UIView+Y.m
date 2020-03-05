@@ -152,10 +152,12 @@
     return nil;
 }
 
+
 + (void)Y_showTestTextView:(NSString *)textStr{
     UITextView * textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 64, Y_ScreenWidth, 400)];
     textView.backgroundColor = Y_RedColor;
     textView.text = textStr;
     [Y_KeyWindow addSubview:textView];
 }
+
 @end

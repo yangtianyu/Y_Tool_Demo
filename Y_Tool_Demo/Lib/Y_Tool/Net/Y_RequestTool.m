@@ -1,6 +1,5 @@
 #import "Y_RequestTool.h"
 #import "Y_Encrypt.h"
-#define XXT_KEY @"PO63lIHeVIc6"
 
 @implementation Y_RequestTool
 
@@ -47,8 +46,6 @@
     request.HTTPMethod = @"POST";
     request.HTTPBody = [TEXT dataUsingEncoding:NSUTF8StringEncoding];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        data = [[Y_Encrypt XXTEA_decryptBase64StringToString:dataString stringKey:XXT_KEY]dataUsingEncoding:NSUTF8StringEncoding];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
                 if (![self getNetStatus]) {

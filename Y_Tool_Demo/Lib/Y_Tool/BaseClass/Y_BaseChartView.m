@@ -50,6 +50,7 @@
     CGContextSetLineDash(context, 0, nil, 0);
     CGContextMoveToPoint(context, startPoint.x, startPoint.y);
     CGContextAddLineToPoint(context, stopPoint.x,stopPoint.y);
+    CGContextClosePath(context);
     CGContextStrokePath(context);
 }
 
@@ -95,6 +96,7 @@
     CGFloat arr[] = {4,3};
     //下面最后一个参数“2”代表排列的个数。
     CGContextSetLineDash(context, 0, arr, 2);
+    CGContextClosePath(context);
     CGContextStrokePath(context);
 }
 
@@ -189,7 +191,6 @@
     CGContextRestoreGState(context);
     CGGradientRelease(gradient);
     CGColorSpaceRelease(colorSpace);
-    CGContextClosePath(context);
 }
 
 /**
@@ -209,6 +210,7 @@
     CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextMoveToPoint(context, center.x, center.y);
     CGContextAddArc(context, center.x, center.y, radius, startAngle, endAngle, !clockwise);
+    CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke|kCGPathFill|kCGPathStroke);
 }
 

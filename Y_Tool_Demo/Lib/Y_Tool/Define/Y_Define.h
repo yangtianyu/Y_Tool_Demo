@@ -1,16 +1,24 @@
 #ifndef Y_Define_h
 #define Y_Define_h
+ 
+
+#ifdef DEBUG
+#define Y_Log(...) NSLog(__VA_ARGS__)
+#else
+#define Y_Log(...)
+#endif
 
 //系统版本
-#define  Y_iOS7     ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
-#define  Y_iOS8     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 9.0)
-#define  Y_iOS9     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 10.0)
-#define  Y_iOS10    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
+#define Y_iOS7     ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
+#define Y_iOS8     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 9.0)
+#define Y_iOS9     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 10.0)
+#define Y_iOS10    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
 
 //屏幕宽高
 #define Y_ScreenWidth   [UIScreen mainScreen].bounds.size.width
 #define Y_ScreenHeight  [UIScreen mainScreen].bounds.size.height
 #define Y_ScreenCenter  CGPointMake(Y_ScreenWidth * 0.5, Y_ScreenHeight * 0.5)
+#define Y_MainScreen    [UIScreen mainScreen]
 #define Y_KeyWindow     [[[UIApplication sharedApplication] windows] lastObject]
 
 //颜色相关
@@ -39,18 +47,16 @@
 
 #pragma mark -
 #pragma mark ============== 常用功能性宏 ==============
-//数字取半
 #define Y_HALF(value)             (value * 0.5)
-//数字乘二
 #define Y_DOUBLE(value)           (value * 2)
-//随机数
 #define Y_RANDOM_INT(from,to)     ((int)(from + (arc4random() % (to - from + 1))))
 
 #pragma mark -
 #pragma mark ============== 显示功能性宏 ==============
-//分割线高度(系统默认高度)
+//分割线高度
 #define Y_SeparateLineH           0.25
 
 
 #endif
+
 

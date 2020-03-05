@@ -7,10 +7,7 @@
 + (NSString *)MD5:(NSString *)string{
     const char *original_str = [string UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "'CC_MD5' is deprecated"
     CC_MD5(original_str, (CC_LONG)strlen(original_str), result);
-    #pragma clang diagnostic pop
     NSMutableString *hash = [NSMutableString string];
     for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
         [hash appendFormat:@"%02X", result[i]];
