@@ -40,14 +40,26 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = Y_RandomColor;
     Y_Button * testBtn = [Y_Button buttonWithFrame:CGRectMake(0, 0, 50, 50) callBack:^(Y_Button *sender) {
+
+        id s1 = [Y_DateTool currentDateStringWithFormat:nil];
+        id s2 = [Y_DateTool currentTimestamp];
+        id s3 = [Y_DateTool getDateStringWithTimeStr:@"01234566789123" format:nil];
+        id s4 = [Y_DateTool getTimeStrWithString:@"20200306143445" format:nil];
+        //        Y_Log(@"%@",[NSString stringWithFormat:@"%@",[NSDate date]]);
         [Y_HUD showTitle:@"网络错误" desc:nil CB:^{
+            id s22 = [Y_DateTool currentTimestamp] ;
+            NSInteger s222 = [s22 integerValue] - [s2 integerValue];
+            Y_Log(@"123");
+            //            Y_Log(@"%@",[NSString stringWithFormat:@"%@",[NSDate date]]);
         }];
     }];
     testBtn.backgroundColor = Y_RandomColor;
     [self.view addSubview:testBtn];
     
 }
+
 - (void)initData{
+    
 }
 #pragma mark -
 #pragma mark ============== UpdateUI ==============

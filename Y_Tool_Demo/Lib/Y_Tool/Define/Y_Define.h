@@ -3,16 +3,17 @@
  
 
 #ifdef DEBUG
-#define Y_Log(...) NSLog(__VA_ARGS__)
+#define Y_Log(...)  NSLog(__VA_ARGS__)
 #else
 #define Y_Log(...)
 #endif
+#define Y_LogTime   Y_Log([NSString stringWithFormat:@"%@",[NSDateFormatter new]])
 
 //系统版本
-#define Y_iOS7     ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
-#define Y_iOS8     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 9.0)
-#define Y_iOS9     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 10.0)
-#define Y_iOS10    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
+#define Y_iOS7      ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
+#define Y_iOS8      ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 9.0)
+#define Y_iOS9      ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 10.0)
+#define Y_iOS10     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
 
 //屏幕宽高
 #define Y_ScreenWidth   [UIScreen mainScreen].bounds.size.width
