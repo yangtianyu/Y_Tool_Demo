@@ -9,6 +9,7 @@
 #import "ListVC.h"
 #import "ListVCModel.h"
 #import "ChartVC.h"
+#import "AnimationVC.h"
 
 
 @interface ListVC ()<UITableViewDataSource,UITableViewDelegate>
@@ -40,7 +41,7 @@
     [self initData];
 }
 - (void)initView{
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = Y_RandomColor;
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.dataSource = self;
@@ -55,8 +56,8 @@
             @"url":@"Chart",
         },
         @{
-            @"title":@"Custom",
-            @"url":@"Custom",
+            @"title":@"Animation",
+            @"url":@"Animation",
         },
     ];
     NSMutableArray * arrM = @[].mutableCopy;
@@ -74,6 +75,9 @@
 #pragma mark ============== Event ==============
 - (void)chartVCbackBarButtonItemAction:(UIBarButtonItem *)sender{
     [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)animationVCVCbackBarButtonItemAction:(UIBarButtonItem *)sender{
+    [self.navigationController.viewControllers.lastObject popoverPresentationController];
 }
 #pragma mark -
 #pragma mark ============== InterTool ==============
@@ -117,17 +121,23 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ListVCModel * model = nil;
     if(indexPath.section == 0){
-        ListVCModel * model = self.dataArr[indexPath.row];
-        ChartVC * chartVC = [[ChartVC alloc] init];
-        chartVC.title = @"tempVC";
-        chartVC.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(chartVCbackBarButtonItemAction:)];
-        chartVC.navigationItem.leftBarButtonItems = @[
-            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(chartVCbackBarButtonItemAction:)],
-        ];
-        Y_BaseNavigationViewController * navVC = [[Y_BaseNavigationViewController alloc] initWithRootViewController:chartVC];
-        navVC.modalPresentationStyle = UIModalPresentationFullScreen; 
-        [self presentViewController:navVC animated:YES completion:nil];
+        if(indexPath.row == 0){
+            model = self.dataArr[indexPath.row];
+            ChartVC * chartVC = [[ChartVC alloc] init];
+            chartVC.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(chartVCbackBarButtonItemAction:)];
+            Y_BaseNavigationViewController * navVC = [[Y_BaseNavigationViewController alloc] initWithRootViewController:chartVC];
+            navVC.modalPresentationStyle = UIModalPresentationFullScreen;
+            [self presentViewController:navVC animated:YES completion:nil];
+        }
+       if(indexPath.row == 1){
+           model = self.dataArr[indexPath.row];
+           AnimationVC * animationVC = [[AnimationVC alloc] init];
+           animationVC.hidesBottomBarWhenPushed = YES;
+           animationVC.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(animationVCVCbackBarButtonItemAction:)];
+           [self.navigationController pushViewController:animationVC animated:YES];
+       }
     }
 }
 #pragma mark -

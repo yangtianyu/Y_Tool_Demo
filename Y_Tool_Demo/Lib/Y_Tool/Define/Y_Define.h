@@ -3,11 +3,13 @@
  
 
 #ifdef DEBUG
-#define Y_Log(...)  NSLog(__VA_ARGS__)
+#define Y_Log(format, ...) NSLog((@"%s [Line %d] --->" format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define Y_LogTime           Y_Log([NSString stringWithFormat:@"%@",[NSDateFormatter new]])
 #else
-#define Y_Log(...)
+#define Y_Log(format, ...)
+#define Y_LogTime
 #endif
-#define Y_LogTime   Y_Log([NSString stringWithFormat:@"%@",[NSDateFormatter new]])
+
 
 //系统版本
 #define Y_iOS7      ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
@@ -54,9 +56,9 @@
 
 #pragma mark -
 #pragma mark ============== 显示功能性宏 ==============
-//分割线高度
-#define Y_SeparateLineH           0.25
-
+//1像素的线
+#define Y_SINGLE_LINE_WIDTH             (1 / Y_MainScreen.scale)
+#define Y_SINGLE_LINE_ADJUST_OFFSET     ((1 / Y_MainScreen.scale) / 2)
 
 #endif
 

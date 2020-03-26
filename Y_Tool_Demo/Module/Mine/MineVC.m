@@ -1,21 +1,19 @@
 //
-//  MainTabBarC.m
+//  MineVC.m
 //  Y_Tool_Demo
 //
-//  Created by ty.yang on 2019/12/27.
-//  Copyright © 2019 ty.yang. All rights reserved.
+//  Created by ty.yang on 2020/3/9.
+//  Copyright © 2020 ty.yang. All rights reserved.
 //
 
-#import "MainTabBarC.h"
-#import "HomeVC.h"
-#import "ListVC.h"
 #import "MineVC.h"
 
-@interface MainTabBarC ()
+@interface MineVC ()
 
 @end
 
-@implementation MainTabBarC
+@implementation MineVC
+
 #pragma mark -
 #pragma mark ============== VCLifecycle ==============
 - (void)viewWillAppear:(BOOL)animated{
@@ -38,18 +36,7 @@
     [self initData];
 }
 - (void)initView{
-    Y_BaseNavigationViewController * homeNAVC = [[Y_BaseNavigationViewController alloc] initWithRootViewController:[HomeVC new]];
-    Y_BaseNavigationViewController * listNAVC = [[Y_BaseNavigationViewController alloc] initWithRootViewController:[ListVC new]];
-    MineVC * mineVC = [[UIStoryboard storyboardWithName:@"Mine" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
-    Y_BaseNavigationViewController * mineNAVC = [[Y_BaseNavigationViewController alloc] initWithRootViewController:mineVC];
-    [homeNAVC setTitle:@"home"];
-    [listNAVC setTitle:@"list"];
-    [mineNAVC setTitle:@"MineVC"];
-    [self setViewControllers:@[
-        homeNAVC,
-        listNAVC,
-        mineNAVC,
-    ]];
+    
 }
 - (void)initData{
 }
@@ -59,6 +46,12 @@
 #pragma mark -
 #pragma mark ============== Event ==============
 
+- (IBAction)btn1:(id)sender {
+    Y_Log(@"123");
+}
+- (IBAction)btn2:(id)sender {
+    Y_Log(@"234");
+}
 #pragma mark -
 #pragma mark ============== InterTool ==============
 

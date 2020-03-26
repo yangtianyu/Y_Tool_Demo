@@ -46,6 +46,7 @@
         id s3 = [Y_DateTool getDateStringWithTimeStr:@"01234566789123" format:nil];
         id s4 = [Y_DateTool getTimeStrWithString:@"20200306143445" format:nil];
         //        Y_Log(@"%@",[NSString stringWithFormat:@"%@",[NSDate date]]);
+        [self test:@"123",@"234",@"345",nil];
         [Y_HUD showTitle:@"网络错误" desc:nil CB:^{
             id s22 = [Y_DateTool currentTimestamp] ;
             NSInteger s222 = [s22 integerValue] - [s2 integerValue];
@@ -57,7 +58,19 @@
     [self.view addSubview:testBtn];
     
 }
-
+-(NSString *)test:(NSString *)str, ...{
+    NSMutableString *result = [NSMutableString stringWithFormat:@"%@",str];
+    va_list params;//定义一个指向个数可变的参数列表指针
+    va_start(params,str);//va_start  得到第一个可变参数地址
+    NSString *arg;
+    while((arg = va_arg(params, id))){ //va_arg 指向下一个参数地址
+        if(arg){
+            [result appendFormat:@" %@",arg];
+        }
+    }
+    va_end(params);
+    return result;
+}
 - (void)initData{
     
 }
